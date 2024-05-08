@@ -15,7 +15,7 @@ export class ProductsService {
 		this.localStorage = localStorage;
 	}
 
-	getProducts(): Observable<any> {
-		return this.http.get('products');
+	getProduce(): Observable<any> {
+		return this.http.get('produce');
 	}
 }
