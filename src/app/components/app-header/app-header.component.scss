@@ -1,0 +1,46 @@
+@import '../../../assets/styles/pallet.scss';
+
+.app-header {
+    height: 130px;
+    background: $dark-white;
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    box-shadow: 0px 7px 20px -17px $brown;
+    overflow: hidden;
+}
+
+img {
+    &.img-n {
+        height: 95px;
+        position: absolute;
+        inset-block-end: 0;
+        inset-inline-end: 0;
+        transform: translate(+25%, +43%);
+        &.n-5 {
+
+        }
+        &.n-4 {
+            inset-inline-end: 81px;
+        }
+
+        &.n-3 {
+            inset-block-start: 0;
+            inset-inline-start: 0;
+            transform: translate(-41px, -54px) rotate(-75deg);
+        }
+
+
+        &.n-2 {
+            inset-block-start: 0;
+            inset-inline-start: 0;
+            transform: translate(-62px, 6px) rotate(45deg);
+            height: 72px;
+            z-index: 0;
+        }
+}
+
+
+}

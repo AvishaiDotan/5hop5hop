@@ -1,0 +1,42 @@
+@import "./../../../assets/styles/_pallet.scss";
+
+:host {
+    width: 275px;
+    border-radius: 10px;
+    background-color: $dark-white;
+    height: 340px;
+
+    .bi-cart-plus-fill, .cart-plus-fill {
+        color: $green;
+    }
+
+    h1 {
+        font-weight: 800;
+        color: $white;
+        text-align: right;
+    }
+
+    .cart-bill-amount {
+        text-align: right;
+        font-size: 0.8rem;
+        color: $white;
+        margin-block-start: 3px;
+    }
+    
+
+    header {
+        height: 60px;
+        background-color: $dark-green;
+        display: flex;
+        justify-content: end;
+        padding-inline: 0.5em;
+        padding-block: 0.25em;
+        align-items: center;
+        gap: 0.5em;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+
+    
+
+}

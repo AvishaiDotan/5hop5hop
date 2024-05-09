@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Produce } from '../models';
+import { Customer, Produce } from '../models';
 import { Observable, of, from } from 'rxjs';
 
 @Injectable({
@@ -98,11 +98,21 @@ export class DBService {
 			imgUrl: "https://s3.eu-central-1.amazonaws.com/images-il.rexail.com/images/products/45a38bcacfc0b4ff14a0a0056cc19c88.jpg",
 			category: ["red","vegetable", "salad"],
 		},
-
 	]
+
+	customer: Customer = {
+		cartItems: [],
+		cash: 1000,
+		imgUrl: './assets/images/customer.png',
+		name: 'גיל'
+	}
 
 	fetchProduce(): Observable<Produce> {
 		return from(this.getAsPromise<Produce>(this.produce));
+	}
+
+	fetchCustomer(): Observable<Customer> {
+		return from(this.getAsPromise<Customer>(this.customer));
 	}
 
 	async getAsPromise<T>(data: T): Promise<T> {

@@ -20,6 +20,8 @@ export class HttpService {
 		switch (url) {
 			case 'produce':
 				return this.dbService.fetchProduce() as Observable<T>;
+			case "customer":
+				return this.dbService.fetchCustomer() as Observable<T>;
 			default:
 				throw new Error('Invalid URL');
 		}

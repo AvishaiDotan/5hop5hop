@@ -1,0 +1,13 @@
+
+
+@mixin apply-box-shadow($color) {
+    transition: box-shadow 0.3s ease-in;
+  
+    &:hover {
+        box-shadow: 0 4px 6px rgba($color, 0.1), 0 1px 3px rgba($color, 0.2);
+    }
+}
+
+@mixin transition-shadow($color) {
+
+}

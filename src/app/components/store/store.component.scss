@@ -1,0 +1,9 @@
+:host {
+    display: grid;
+    grid-template-columns: 160px 1fr 160px;
+}
+
+.store-container { 
+    grid-column: 2;
+}
+

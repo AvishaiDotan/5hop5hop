@@ -1,0 +1,15 @@
+@import "../../../../assets/styles/_pallet.scss";
+@import "../../../../assets/styles/_mixin.scss";
+:host {
+    .small {
+        height: 29px;
+        background: #33cc66;
+        border-radius: 3px;
+        padding: 5px;
+        cursor: pointer;
+
+        &:hover {
+            @include apply-box-shadow($green);
+        }
+    }
+}
