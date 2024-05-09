@@ -1,0 +1,26 @@
+@import '../../../assets/styles/pallet.scss';
+
+:host {
+    border-radius: 10px;
+    background-color: $white;
+    position: relative;
+}
+
+
+.product {
+    padding: 0.5em;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    flex-direction: column;
+}
+
+.product-name {
+    margin-block-start: 20px;
+    font-weight: 700;
+}
+
+.product-price {
+    font-weight: 700;
+}
+

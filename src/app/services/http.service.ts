@@ -16,15 +16,18 @@ export class HttpService {
 	}
 
 	get<T>(url: string): Observable<T> {
-		// return this.http.get(`${this.baseUrl}${url}`);
+		let data: Observable<any>;
 		switch (url) {
 			case 'produce':
-				return this.dbService.fetchProduce() as Observable<T>;
+				data = this.dbService.fetchProduce()
+				break
 			case "customer":
-				return this.dbService.fetchCustomer() as Observable<T>;
+				data = this.dbService.fetchCustomer()
+				break
 			default:
 				throw new Error('Invalid URL');
 		}
+		return data as Observable<T>;
 	}
 
 	post(url: string, data: any) {

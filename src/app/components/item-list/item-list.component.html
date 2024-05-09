@@ -1,1 +1,7 @@
-<p>item-list works!</p>
+<section *ngIf="items">
+    <item *ngFor="let item of items" [item]="item" />
+</section>
+<section *ngIf="!items">
+    <img src="../../../assets/images/bug-removebg-preview.png" width="275px"/>
+</section>
+

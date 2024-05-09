@@ -1,2 +1,4 @@
-<h1>Hello</h1>
-<pre *ngIf="produce">{{ produce || null | json }}</pre>
+
+<section *ngIf="produce" class="product-list">
+    <product (addToCart)="onAddToCart($event)" *ngFor="let item of produce" [item]="item"></product>
+</section>

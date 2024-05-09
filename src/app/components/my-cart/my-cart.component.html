@@ -4,12 +4,12 @@
         <div class="d-flex">
             <div class="me-2">
                 <h1>סל הקניות שלי</h1>
-                <p class="cart-bill-amount">150.20 ש"ח</p>
+                <p class="cart-bill-amount">ש"ח {{getItemsPrice()}}</p>
             </div>
             <i-bs name="cart-plus-fill" height="25px" width="25px" ngClass="cart-plus-fill"/>
         </div>
     </div>
 </header>
 <item-list />
-<buy-button />
+<buy-button [buttonStyleClass]="'down'"  />
 

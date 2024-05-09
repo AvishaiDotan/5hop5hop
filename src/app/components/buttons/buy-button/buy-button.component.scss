@@ -1,15 +1,43 @@
 @import "../../../../assets/styles/_pallet.scss";
 @import "../../../../assets/styles/_mixin.scss";
 :host {
-    .small {
+    .small, .down, .add-to-cart {
         height: 29px;
-        background: #33cc66;
+        color: white;
+        background: $green;
         border-radius: 3px;
         padding: 5px;
         cursor: pointer;
+        @include varela();
 
         &:hover {
             @include apply-box-shadow($green);
         }
+
+        &.disabled {
+            background: grey;
+        }
+    }
+
+    .add-to-cart {
+        position: absolute;
+        bottom: 0;
+        border: 0;
+        border-end-end-radius: 0;
+        border-end-start-radius: 0;
+        width: 100px;
+        left: 0;
+        transform: translate(63%, 0);
+    }
+
+    .down {
+        margin-block-start: 103px;
+        display: block;
+        text-align: center;
+        width: 80px;
+        border: 0;
+        width: 93px;
+        height: 37px;
+        font-weight: 600;
     }
 }

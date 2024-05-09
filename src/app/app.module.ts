@@ -15,6 +15,9 @@ import { MyCartComponent } from './components/my-cart/my-cart.component';
 import { FilterSideBarComponent } from './components/filter-side-bar/filter-side-bar.component';
 import { ItemListComponent } from './components/item-list/item-list.component';
 import { BuyButtonComponent } from './components/buttons/buy-button/buy-button.component';
+import { RouterLink } from '@angular/router';
+import { ItemComponent } from './components/item/item.component';
+import { ProductComponent } from './components/product/product.component';
 
 @NgModule({
   declarations: [
@@ -26,9 +29,12 @@ import { BuyButtonComponent } from './components/buttons/buy-button/buy-button.c
     MyCartComponent,
     FilterSideBarComponent,
     ItemListComponent,
-    BuyButtonComponent
+    BuyButtonComponent,
+    ItemComponent,
+    ProductComponent
   ],
   imports: [
+    // RouterLink
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
@@ -36,7 +42,7 @@ import { BuyButtonComponent } from './components/buttons/buy-button/buy-button.c
     IconModule,
     NgxBootstrapIconsModule.pick(allIcons)
   ],
-  providers: [provideClientHydration()],
+  providers: [provideClientHydration(), AppRoutingModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

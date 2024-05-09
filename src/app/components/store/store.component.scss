@@ -1,9 +1,14 @@
+@import '../../../assets/styles/pallet.scss';
+
 :host {
     display: grid;
     grid-template-columns: 160px 1fr 160px;
+    background: $dark-white;
+    padding-block-start: 23px;
 }
 
 .store-container { 
     grid-column: 2;
+    gap: 30px;
 }
 

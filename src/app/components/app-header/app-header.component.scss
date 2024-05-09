@@ -1,8 +1,9 @@
 @import '../../../assets/styles/pallet.scss';
 
+
 .app-header {
     height: 130px;
-    background: $dark-white;
+    background: $dark-green;
     font-size: 50px;
     display: flex;
     justify-content: center;
@@ -10,6 +11,7 @@
     font-weight: 600;
     box-shadow: 0px 7px 20px -17px $brown;
     overflow: hidden;
+    color: $white;
 }
 
 img {

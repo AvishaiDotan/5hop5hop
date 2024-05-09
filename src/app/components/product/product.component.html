@@ -1,0 +1,36 @@
+<div 
+    *ngIf="item" 
+    class="product h-100"   
+    (mouseenter)="toggleMouseOverItem()" 
+    (mouseleave)="toggleMouseOverItem()"
+>
+    <img [src]="item.imgUrl" alt="{{item.name}}" width="200px" />
+    <section *ngIf="!isMouseOverItem; else noContent" class="d-flex flex-column justify-content-center align-items-center">
+        <p class="product-name">
+            {{item.name}}
+        </p>
+        <p class="d-flex flex-row-reverse mt-2">
+            <span class="product-price">
+                {{item.price | currency:'ILS':true:'1.2-2'}}
+            </span>
+            /
+            <span class="product-amount">
+                {{item.amount}}
+            </span>
+        </p>
+    </section>
+    <ng-template #noContent >
+        <p class="product-name">
+            <span class="product-price">
+                {{item.price | currency:'ILS':true:'1.2-2'}}
+            </span>
+            /
+            <span class="product-amount">
+                {{item.amount}}
+            </span>
+        </p>
+
+    <buy-button (buttonClicked)="onAddToCart(item)" [buttonStyleClass]="'add-to-cart'" [isActive]="true" />
+    </ng-template>
+
+</div>
