@@ -1,7 +1,7 @@
 @import "../../../../assets/styles/_pallet.scss";
 @import "../../../../assets/styles/_mixin.scss";
 :host {
-    .small, .down, .add-to-cart {
+    .small, .down, .add-to-cart, .small.cancel {
         height: 29px;
         color: white;
         background: $green;
@@ -17,6 +17,10 @@
         &.disabled {
             background: grey;
         }
+    }
+
+    .small.cancel {
+        background-color: rgb(255, 122, 122);
     }
 
     .add-to-cart {

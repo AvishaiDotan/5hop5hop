@@ -8,6 +8,7 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class BuyButtonComponent {
   @Input() buttonStyleClass: string = ""; 
   @Input() isActive: boolean = false; 
+  @Input() text: string = "לתשלום"; 
 
   @Output() buttonClicked: EventEmitter<any> = new EventEmitter();
 

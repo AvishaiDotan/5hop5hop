@@ -14,7 +14,7 @@ export class MyCartComponent implements OnInit, OnDestroy {
     customerSubscription!: Subscription;
     cart: CartItems | null = null;
     customer: Customer | null = null;
-
+    isPayMenuOpen = false;
 
     constructor(private customerService: CustomerService, private userMessageService: UserMessageService) {}
 
@@ -66,5 +66,9 @@ export class MyCartComponent implements OnInit, OnDestroy {
             
         }
         return cart;
+    }
+
+    togglePayMenu() {
+        this.isPayMenuOpen = !this.isPayMenuOpen;
     }
 }

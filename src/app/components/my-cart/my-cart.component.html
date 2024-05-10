@@ -1,16 +1,39 @@
 <header>
     <div class="d-flex w-100 justify-content-between">
-        <buy-button [buttonStyleClass]="'small'" [isActive]="(cart?.length || 0) > 0"/>
+        <buy-button 
+        [buttonStyleClass]="!isPayMenuOpen ? 'small' :'small cancel'" 
+        [isActive]="(cart?.length || 0) > 0" 
+        [text]="!isPayMenuOpen ? 'לתשלום' :'בטל'"
+        (buttonClicked)="togglePayMenu()"/>
         <div class="d-flex">
             <div class="me-2">
                 <h1>סל הקניות שלי</h1>
                 <p class="cart-bill-amount">{{((getItemsPrice() | number: '1.0-2' ) | currency:'ILS')}}</p>
             </div>
             <i-bs name="cart-plus-fill" height="25px" width="25px" ngClass="cart-plus-fill"/>
-            
         </div>
     </div>
 </header>
-<item-list [items]="cart" (onAddOrRemoveFromCart)="addOrRemoveFromCart($event)" />
-<buy-button [buttonStyleClass]="'down'" [isActive]="(cart?.length || 0) > 0" />
+
+<section *ngIf="!isPayMenuOpen; else payMenu">
+    <item-list [items]="cart" (onAddOrRemoveFromCart)="addOrRemoveFromCart($event)" />
+    <buy-button 
+    [buttonStyleClass]="'down'" 
+    [isActive]="(cart?.length || 0) > 0" 
+    [text]="'לתשלום'" 
+    (buttonClicked)="togglePayMenu()"/>
+</section>
+
+<ng-template #payMenu>
+    <div class="item-list">
+        <img src="../../../assets/images/card.png" width="100%"/>
+    </div>
+    <buy-button 
+    [buttonStyleClass]="'down'" 
+    [isActive]="(cart?.length || 0) > 0" 
+    [text]="'אישור תשלום'" 
+    (buttonClicked)="togglePayMenu()"/>
+</ng-template>
+
+
 
