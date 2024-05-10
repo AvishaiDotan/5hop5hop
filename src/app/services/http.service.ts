@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { DBService } from './db.service';
 import { Observable } from 'rxjs';
+import { Produce } from '../models';
 
 @Injectable({
 	providedIn: 'root'
@@ -30,8 +31,13 @@ export class HttpService {
 		return data as Observable<T>;
 	}
 
-	post(url: string, data: any) {
-		return this.http.post(`${this.baseUrl}${url}`, data);
+	post(url: string, data: any = null): any {
+		// return this.http.post(`${this.baseUrl}${url}`, data);
+		if (url.startsWith('produce&filter=')) {
+			const filter = url.split('=')[1];
+			const res = this.dbService.fetchProduceAndFilter(filter)
+			return res as Observable<Produce>;
+		}
 	}
 
 	put(url: string, data: any) {

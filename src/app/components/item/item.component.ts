@@ -1,5 +1,5 @@
-import { Component, Input } from '@angular/core';
-import { Item } from '../../models';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { CartItem, Item } from '../../models';
 
 @Component({
 	selector: 'item',
@@ -7,5 +7,11 @@ import { Item } from '../../models';
 	styleUrl: './item.component.scss'
 })
 export class ItemComponent {
-	@Input() item: Item | null = null;
+
+	@Output() onAddOrRemoveFromCart: EventEmitter<boolean> = new EventEmitter();
+	@Input() item: CartItem | null = null;
+
+	onAddOrRemove(add: boolean) {
+		this.onAddOrRemoveFromCart.emit(add);
+	}
 }

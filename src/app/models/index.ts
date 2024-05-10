@@ -5,6 +5,7 @@ import {  Amount } from "./amount.model";
 import { CartItems } from "./cartItems.model";
 import { Customer } from "./customer.model";
 import { Order } from "./order.model";
+import { CartItem } from "./cartItem.model";
 
 
 export {
@@ -14,5 +15,6 @@ export {
     Amount,
     CartItems,
     Customer,
-    Order
+    Order,
+    CartItem
 }

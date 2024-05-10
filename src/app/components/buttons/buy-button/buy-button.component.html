@@ -1,5 +1,5 @@
-<button *ngIf="buttonStyleClass === 'small'" [disabled]="!isActive" [ngClass]="[buttonStyleClass, isActive ? 'active' : 'disabled']" class="">לתשלום</button>
+<button (click)="handleClick()" *ngIf="buttonStyleClass === 'small'" [disabled]="!isActive" [ngClass]="[buttonStyleClass, isActive ? 'active' : 'disabled']" class="">לתשלום</button>
 <div *ngIf="buttonStyleClass === 'down'" class="d-flex justify-content-center align-items-center">
-    <button [disabled]="!isActive"  [ngClass]="[buttonStyleClass, isActive ? 'active' : 'disabled']">לתשלום</button>
+    <button (click)="handleClick()" [disabled]="!isActive"  [ngClass]="[buttonStyleClass, isActive ? 'active' : 'disabled']">לתשלום</button>
 </div>
 <button (click)="handleClick()" *ngIf="buttonStyleClass === 'add-to-cart'" [disabled]="!isActive" [ngClass]="[buttonStyleClass, isActive ? 'active' : 'disabled']" class="">הוסף לעגלה</button>

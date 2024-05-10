@@ -1,1 +1,5 @@
-<p>filter-side-bar works!</p>
+<div class="filter" *ngFor="let filter of filters">
+    <span class="text fw-medium varela" (click)="onFilterProduce(filter)">
+        {{filter}}
+    </span>
+</div>

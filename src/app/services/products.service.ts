@@ -43,4 +43,18 @@ export class ProductsService {
 			return Promise.reject(error);
 		}
 	}
+
+	async filterProduce(filter: string): Promise<Produce> {
+		try {
+			const produce = await lastValueFrom(this.http.post(`produce&filter=${filter}`)) as Produce;
+			if (!produce) {
+				throw new Error("No produce found");
+			}
+			this._produce$.next(produce);
+			return Promise.resolve(produce);
+		}
+		catch (error: any) {
+			return Promise.reject(error);
+		}
+	}
 }

@@ -1,1 +1,30 @@
-<p>item works!</p>
+<div *ngIf="item" class="row flex-row-reverse p-0 m-0 py-1 flex-nowrap cart-item">
+    <div class="col p-0 m-0 img-container">
+        <img [src]="item.imgUrl" [alt]="item.name" />
+    </div>
+    <div class="col d-flex justify-content-center align-items-center" >
+        <p>{{item.name}}</p>
+    </div>
+    <div class="col d-flex justify-content-center align-items-center">
+        <div class="row amount-action p-0 m-0">
+            <div class="col add" (click)="onAddOrRemove(true)">
+                <div class="action-container first text-center">
+                    <i-bs name="plus-circle-fill" height="16px" width="16px" ngClass="plus-circle-fill"/>
+                </div>
+            </div>
+            <div class="col text-center flex-row-reverse" style="direction: rtl;">
+                <span class="fw-bold">{{item.number}} </span>
+                <span>ל{{item.amount}}</span>
+            </div>
+            <div class="col remove" (click)="onAddOrRemove(false)">
+                <div class="action-container second text-center">
+                    <i-bs name="dash-circle-fill" height="16px" width="16px" ngClass="dash-circle-fill"/>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="col d-flex justify-content-center align-items-center">
+        <p class="fw-bold">{{item.price * item.number| currency:'ILS':true:'1.2-2'}}</p>
+    </div>
+</div>

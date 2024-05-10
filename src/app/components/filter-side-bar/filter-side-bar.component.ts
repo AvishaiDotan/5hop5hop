@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { ProductsService } from '../../services/products.service';
 
 @Component({
   selector: 'filter-side-bar',
@@ -7,4 +8,22 @@ import { Component } from '@angular/core';
 })
 export class FilterSideBarComponent {
 
+	constructor(private productsService: ProductsService) { }
+
+	filters: string[] = [
+		"ירוק", 
+		"ירק", 
+		"קטן", 
+		"סלט",
+		"אדום", 
+		"צהוב",
+		"מרק",
+		"כתום",
+		"שחור",
+		"אדום"
+	]
+
+	async onFilterProduce(filter: string) {
+		await this.productsService.filterProduce(filter);
+	}
 }

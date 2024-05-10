@@ -46,8 +46,6 @@ export class ProductListComponent implements OnInit, OnDestroy {
 	}
 
 	async onAddToCart(item: Item) {
-		console.log("onAddToCart");
-		
 		var updatedCustomer: Customer = {
 			cash: this.customer?.cash || 0,
 			imgUrl: this.customer?.imgUrl || "",

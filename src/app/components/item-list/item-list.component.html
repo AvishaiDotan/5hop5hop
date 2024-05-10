@@ -1,7 +1,9 @@
-<section *ngIf="items">
-    <item *ngFor="let item of items" [item]="item" />
+<section *ngIf="itemsToShow != null && itemsToShow.length > 0; else bagImg" class="item-list">
+    <item *ngFor="let item of itemsToShow" [item]="item" (onAddOrRemoveFromCart)="onAddOrRemove($event, item)"/>
 </section>
-<section *ngIf="!items">
-    <img src="../../../assets/images/bug-removebg-preview.png" width="275px"/>
-</section>
+<ng-template #bagImg>
+    <div class="item-list">
+        <img src="../../../assets/images/bug-removebg-preview.png" width="100%"/>
+    </div>
+</ng-template>
 
